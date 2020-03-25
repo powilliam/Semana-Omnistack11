@@ -1,9 +1,10 @@
 import { Request, Response } from 'express'
 import { getRepository } from 'typeorm'
 
-import { Controller } from './controller'
-import { Organization } from '../database/entity/Organization'
-import { Incident } from '../database/entity/Incident'
+import { Organization } from '@Entity/Organization'
+import { Incident } from '@Entity/Incident'
+
+import { Controller } from '@Types/controller'
 
 export interface IIncidentController {
   index: Controller

@@ -2,8 +2,9 @@ import { Request, Response } from 'express'
 import { getRepository } from 'typeorm'
 import { randomBytes } from 'crypto'
 
-import { Controller } from './controller'
-import { Organization } from '../database/entity/Organization'
+import { Organization } from '@Entity/Organization'
+
+import { Controller } from '@Types/controller'
 
 export interface IOrganizationController {
   index: Controller

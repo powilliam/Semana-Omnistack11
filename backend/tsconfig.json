@@ -6,10 +6,23 @@
       ],
       "target": "es5",
       "module": "commonjs",
-      "moduleResolution": "node",
+      "moduleResolution": "Node",
       "outDir": "./build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "sourceMap": true
-   }
+      "sourceMap": true,
+      "typeRoots": ["node_modules/@types", "src/types"],
+      "baseUrl": ".",
+      "paths": {
+         "@Entity/*": ["src/database/entity/*"],
+         "@Controllers/*": ["src/controllers/*"],
+         "@Services/*": ["src/services/*"],
+         "@Types/*": ["src/types/*"],
+         "@Config/*": ["src/config/*"],
+         "@Database/*": ["src/database/*"],
+         "@Routes/*": ["src/routes/*"]
+      }
+   },
+   "include": ["**/*"],
+   "exclude": ["node_modules"]
 }

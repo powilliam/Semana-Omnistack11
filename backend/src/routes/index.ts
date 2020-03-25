@@ -1,8 +1,8 @@
 import { Router } from 'express'
 
-import OrganizationController from '../controllers/OrganizationController'
-import IncidentController from '../controllers/IncidentController'
-import AuthService from '../services/AuthService'
+import OrganizationController from '@Controllers/OrganizationController'
+import IncidentController from '@Controllers/IncidentController'
+import AuthService from '@Services/AuthService'
 
 const Routes = Router()
 

@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
 import { getRepository } from 'typeorm'
 
-import { AuthService } from './auth'
-import { Organization } from '../database/entity/Organization'
+import { Organization } from '@Entity/Organization'
+
+import { AuthService } from '@Types/auth'
 
 export interface IAuthService {
   authentication: AuthService
