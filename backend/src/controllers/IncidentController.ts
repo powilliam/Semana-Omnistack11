@@ -57,7 +57,6 @@ export default new (class IncidentController implements IIncidentController {
 
   public async delete(request: Request, response: Response) {
     const { incidentId } = request.params
-    const { authorization } = request.headers
 
     const incidentRepository = getRepository(Incident)
 
@@ -70,10 +69,6 @@ export default new (class IncidentController implements IIncidentController {
 
     if (!searchedIncident) {
       return response.status(404).json({ error: 'Searched incident doesnt exist' })
-    } else if (searchedIncident.organization.identification !== authorization) {
-      return response.status(401).json({
-        error: 'You cannot delete this incident because you dont have privileges'
-      })
     }
 
     await incidentRepository.delete(searchedIncident)
