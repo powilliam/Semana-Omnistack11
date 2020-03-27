@@ -19,5 +19,6 @@ export const DevelopmentOptions: ConnectionOptions = {
   entities: [Organization, Incident],
   cli: {
     entitiesDir: resolve(__dirname, '..', 'database', 'entity')
-  }
+  },
+  uuidExtension: 'uuid-ossp'
 }
