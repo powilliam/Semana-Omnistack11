@@ -7,8 +7,8 @@ import AuthService from '@Services/AuthService'
 
 const Routes = Router()
 
-Routes.get('/auth', AuthService.authentication)
 Routes.get('/profile', AuthService.authorization, ProfileController.index)
+Routes.post('/auth', AuthService.authentication)
 
 Routes.get('/incidents', IncidentController.index)
 Routes.post('/incidents', AuthService.authorization, IncidentController.store)

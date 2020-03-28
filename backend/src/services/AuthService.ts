@@ -12,12 +12,12 @@ export interface IAuthService {
 
 export default new (class AuthService implements IAuthService {
   public async authentication(request: Request, response: Response) {
-    const { authorization } = request.headers
+    const { identification } = request.body
 
     const organizationRepository = getRepository(Organization)
 
     const searchedOrganization = await organizationRepository.findOne({
-      where: { identification: authorization }
+      where: { identification }
     })
 
     if (!searchedOrganization) {
