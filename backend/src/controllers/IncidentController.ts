@@ -58,6 +58,10 @@ export default new (class IncidentController implements IIncidentController {
   public async delete(request: Request, response: Response) {
     const { incidentId } = request.params
 
+    if (!incidentId) {
+      return response.status(404).json({ error: 'Incident identification must be provided' })
+    }
+
     const incidentRepository = getRepository(Incident)
 
     const searchedIncident = await incidentRepository.findOne({
